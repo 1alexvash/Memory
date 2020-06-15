@@ -9,7 +9,7 @@ import Results from "./components/Results";
 
 import { StoreProvider } from "easy-peasy";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import store from "./store";
 
