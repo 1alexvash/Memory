@@ -16,7 +16,7 @@ import store from "./store";
 const App = () => {
   return (
     <StoreProvider store={store}>
-      <Router>
+      <Router basename="/">
         <Switch>
           <Route exact path="/" render={() => <Preloader />} />
           <Route exact path="/menu" render={() => <Menu />} />
