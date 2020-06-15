@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Memort/static/css/main.e7d037ae.chunk.css",
-    "main.js": "/Memort/static/js/main.8885b758.chunk.js",
-    "main.js.map": "/Memort/static/js/main.8885b758.chunk.js.map",
+    "main.js": "/Memort/static/js/main.83e4ce04.chunk.js",
+    "main.js.map": "/Memort/static/js/main.83e4ce04.chunk.js.map",
     "runtime-main.js": "/Memort/static/js/runtime-main.bed5ddd6.js",
     "runtime-main.js.map": "/Memort/static/js/runtime-main.bed5ddd6.js.map",
-    "static/js/2.0391f504.chunk.js": "/Memort/static/js/2.0391f504.chunk.js",
-    "static/js/2.0391f504.chunk.js.map": "/Memort/static/js/2.0391f504.chunk.js.map",
+    "static/js/2.22471aee.chunk.js": "/Memort/static/js/2.22471aee.chunk.js",
+    "static/js/2.22471aee.chunk.js.map": "/Memort/static/js/2.22471aee.chunk.js.map",
     "index.html": "/Memort/index.html",
-    "precache-manifest.a8d204d968169a5ae0204c17052cfaf3.js": "/Memort/precache-manifest.a8d204d968169a5ae0204c17052cfaf3.js",
+    "precache-manifest.f08419a9c7cf379c263796114b589b07.js": "/Memort/precache-manifest.f08419a9c7cf379c263796114b589b07.js",
     "service-worker.js": "/Memort/service-worker.js",
     "static/css/main.e7d037ae.chunk.css.map": "/Memort/static/css/main.e7d037ae.chunk.css.map",
-    "static/js/2.0391f504.chunk.js.LICENSE.txt": "/Memort/static/js/2.0391f504.chunk.js.LICENSE.txt",
+    "static/js/2.22471aee.chunk.js.LICENSE.txt": "/Memort/static/js/2.22471aee.chunk.js.LICENSE.txt",
     "static/media/apple.png": "/Memort/static/media/apple.0530a39a.png",
     "static/media/baby.png": "/Memort/static/media/baby.50c037dc.png",
     "static/media/bananas.png": "/Memort/static/media/bananas.f2cdee33.png",
@@ -40,8 +40,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bed5ddd6.js",
-    "static/js/2.0391f504.chunk.js",
+    "static/js/2.22471aee.chunk.js",
     "static/css/main.e7d037ae.chunk.css",
-    "static/js/main.8885b758.chunk.js"
+    "static/js/main.83e4ce04.chunk.js"
   ]
 }
