@@ -1,6 +1,6 @@
 # Memory
 
-Improve your Memory and become new Einstein
+Improve your Memory and become the new Einstein
 
 ## Installing the project && running on the local machine
 

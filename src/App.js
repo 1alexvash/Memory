@@ -3,30 +3,20 @@ import "./scss/main.css";
 
 import Preloader from "./components/Preloader";
 import Menu from "./components/Menu";
-import GamePreview from "./components/GamePreview";
-import Game from "./components/Game";
+import GamePreview from "./components/Game/GamePreview";
+import Game from "./components/Game/Game";
 import Results from "./components/Results";
 
-import { StoreProvider } from "easy-peasy";
+import { HashRouter as Router, Route } from "react-router-dom";
 
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-
-import store from "./store";
-
-const App = () => {
-  return (
-    <StoreProvider store={store}>
-      <Router basename="/">
-        <Switch>
-          <Route exact path="/" render={() => <Preloader />} />
-          <Route exact path="/menu" render={() => <Menu />} />
-          <Route exact path="/game-preview" render={() => <GamePreview />} />
-          <Route exact path="/game" render={() => <Game />} />
-          <Route exact path="/results" render={() => <Results />} />
-        </Switch>
-      </Router>
-    </StoreProvider>
-  );
-};
+const App = () => (
+  <Router basename="/">
+    <Route exact path="/" render={() => <Preloader />} />
+    <Route exact path="/menu" render={() => <Menu />} />
+    <Route exact path="/game-preview" render={() => <GamePreview />} />
+    <Route exact path="/game" render={() => <Game />} />
+    <Route exact path="/results" render={() => <Results />} />
+  </Router>
+);
 
 export default App;
