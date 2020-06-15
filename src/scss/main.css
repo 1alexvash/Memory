@@ -1,0 +1,517 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  width: 100%;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body:after,
+.Preloader:after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/brain.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0.15;
+  z-index: -3;
+}
+
+.Game-Preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: grey;
+  -webkit-transition: 1.5s 0.5s;
+  transition: 1.5s 0.5s;
+  z-index: 1;
+}
+
+.Game-Preview.hide {
+  top: -100%;
+  opacity: 0.5;
+}
+
+.Game-Preview .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 480px;
+  padding: 20px;
+  background: white;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .Game-Preview .content {
+    width: 100%;
+  }
+}
+
+.Game-Preview .content h1 {
+  color: #0099cc;
+  font-size: 24px;
+}
+
+.Game-Preview .content button {
+  cursor: pointer;
+  color: black;
+  margin-top: 20px;
+  padding: 15px;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  -webkit-animation: buttonTip 3s linear infinite;
+          animation: buttonTip 3s linear infinite;
+}
+
+@-webkit-keyframes buttonTip {
+  from {
+    -webkit-box-shadow: 1px 2px 5px 1px black;
+            box-shadow: 1px 2px 5px 1px black;
+  }
+  50% {
+    -webkit-box-shadow: 1px 2px 15px 3px black;
+            box-shadow: 1px 2px 15px 3px black;
+  }
+  to {
+    -webkit-box-shadow: 1px 2px 5px 1px black;
+            box-shadow: 1px 2px 5px 1px black;
+  }
+}
+
+@keyframes buttonTip {
+  from {
+    -webkit-box-shadow: 1px 2px 5px 1px black;
+            box-shadow: 1px 2px 5px 1px black;
+  }
+  50% {
+    -webkit-box-shadow: 1px 2px 15px 3px black;
+            box-shadow: 1px 2px 15px 3px black;
+  }
+  to {
+    -webkit-box-shadow: 1px 2px 5px 1px black;
+            box-shadow: 1px 2px 5px 1px black;
+  }
+}
+
+.Game-Preview .content button:hover {
+  border-radius: 20px;
+  background: black;
+  color: white;
+  text-decoration: underline;
+}
+
+.Game {
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .Game {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.Game .boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.Game .boxes .flip-card {
+  background-color: transparent;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.Game .boxes .flip-card .flip-card-inner {
+  position: relative;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.Game .boxes .flip-card .flip-card-front,
+.Game .boxes .flip-card .flip-card-back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.Game .boxes .flip-card .flip-card-front {
+  color: black;
+}
+
+.Game .boxes .flip-card .flip-card-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.Game .boxes .flip-card .flip-card-back img {
+  width: 100%;
+  height: 100%;
+}
+
+.Game .boxes .flip-card.matched .flip-card-inner,
+.Game .boxes .flip-card.active .flip-card-inner,
+.Game .boxes .flip-card.show-all .flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.Game .boxes .flip-card.active .flip-card-inner {
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.Game .timer {
+  font-size: 48px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  text-shadow: 1px 2px 1px black;
+  color: deepskyblue;
+}
+
+@media (max-width: 640px) {
+  .Game .timer {
+    top: initial;
+    bottom: 0;
+  }
+}
+
+.Menu {
+  width: 480px;
+  margin: auto;
+}
+
+@media (max-width: 640px) {
+  .Menu {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.Menu h1 {
+  margin-top: 10px;
+  font-size: 36px;
+}
+
+.Menu a {
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 20px;
+  background: lightgray;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: black;
+}
+
+.Menu a:hover {
+  background: gray;
+  color: white;
+}
+
+.Menu a:nth-child(2) {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}
+
+.Menu a:nth-child(2):hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.Menu a:nth-child(3) {
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
+}
+
+.Menu a:nth-child(3):hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.Menu a:nth-child(4) {
+  background-color: white;
+  color: black;
+  border: 2px solid #f44336;
+}
+
+.Menu a:nth-child(4):hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.Menu a:nth-child(5) {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.Menu a:nth-child(5):hover {
+  background-color: #e7e7e7;
+}
+
+.Menu a:nth-child(6) {
+  background: #000;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.Menu a:nth-child(6):hover {
+  background-color: #555555;
+  color: white;
+}
+
+.Preloader {
+  text-align: center;
+}
+
+.Preloader .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.Preloader .content .title {
+  text-shadow: 1px 2px 3px deepskyblue;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.Preloader .spinner {
+  margin-top: 20px;
+}
+
+.Preloader .spinner div {
+  position: absolute;
+  top: 50px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: deepskyblue;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.Preloader .spinner div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: spinner1 0.8s infinite;
+          animation: spinner1 0.8s infinite;
+}
+
+.Preloader .spinner div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: spinner2 0.8s infinite;
+          animation: spinner2 0.8s infinite;
+}
+
+.Preloader .spinner div:nth-child(3) {
+  left: 56px;
+  -webkit-animation: spinner2 0.8s infinite;
+          animation: spinner2 0.8s infinite;
+}
+
+.Preloader .spinner div:nth-child(4) {
+  left: 104px;
+  -webkit-animation: spinner3 0.8s infinite;
+          animation: spinner3 0.8s infinite;
+}
+
+@-webkit-keyframes spinner1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes spinner1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes spinner3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes spinner3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes spinner2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(48px, 0);
+            transform: translate(48px, 0);
+  }
+}
+
+@keyframes spinner2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(48px, 0);
+            transform: translate(48px, 0);
+  }
+}
+
+.Preloader:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -2;
+}
+
+.Preloader:after {
+  z-index: -1;
+  -webkit-animation: opacityChange 5s infinite alternate;
+          animation: opacityChange 5s infinite alternate;
+}
+
+@-webkit-keyframes opacityChange {
+  from {
+    opacity: 0.3;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transform: scale(1.375);
+            transform: scale(1.375);
+  }
+  to {
+    opacity: 0.9;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes opacityChange {
+  from {
+    opacity: 0.3;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transform: scale(1.375);
+            transform: scale(1.375);
+  }
+  to {
+    opacity: 0.9;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+.Results {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.Results .time,
+.Results .mistakes {
+  margin: 25px 0;
+}
+
+.Results .play-again {
+  display: inline-block;
+  border: 2px solid black;
+  color: black;
+  padding: 4px 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: lightgray;
+}
+
+.Results .play-again:hover {
+  background: black;
+  color: white;
+}

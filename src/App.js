@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./scss/main.css";
 
-function App() {
+import Preloader from "./components/Preloader";
+import Menu from "./components/Menu";
+import GamePreview from "./components/GamePreview";
+import Game from "./components/Game";
+import Results from "./components/Results";
+
+import { StoreProvider } from "easy-peasy";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import store from "./store";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={() => <Preloader />} />
+          <Route exact path="/menu" render={() => <Menu />} />
+          <Route exact path="/game-preview" render={() => <GamePreview />} />
+          <Route exact path="/game" render={() => <Game />} />
+          <Route exact path="/results" render={() => <Results />} />
+        </Switch>
+      </Router>
+    </StoreProvider>
   );
-}
+};
 
 export default App;
